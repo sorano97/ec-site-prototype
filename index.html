@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>morillion | 女性向け夜道の防犯情報サイト</title>
+    <meta name="description" content="morillionは、夜道や一人暮らしの不安に寄り添う、やさしい防犯アイテムと読みものを届けるサイトです。">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="intro-loader" id="introLoader" aria-label="読み込み中">
+      <p class="intro-text" id="introText" aria-live="polite">夜道に「安心」を</p>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="morillion home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>morillion</strong>
+          <small>SAFETY · for everyday</small>
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="主要ナビゲーション">
+        <a href="#products">商品一覧</a>
+        <a href="#guide">はじめての方へ</a>
+        <a href="#ranking">ランキング</a>
+        <a href="#column">防犯コラム</a>
+        <a href="#story">ストーリー</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" aria-label="検索">⌕</button>
+        <button type="button" aria-label="マイページ">◌</button>
+        <button class="cart-button" type="button" aria-label="カート">🛒<span id="cartCount">0</span></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, brave little step</p>
+          <h1 class="hero-logo-title">
+            <img src="images/hero-logo.png" alt="夜道に安心を">
+          </h1>
+          <p class="lead">一人暮らしの帰り道や出張先でも、毎日に寄り添う防犯アイテムを。</p>
+          <div class="hero-buttons">
+            <a class="button primary" href="#guide">はじめての方へ</a>
+            <a class="button secondary" href="#products">商品をみる</a>
+          </div>
+          <dl class="hero-points">
+            <div><dt>女性スタッフが選定</dt><dd>毎月テスト・実体験を共有</dd></div>
+            <div><dt>送料無料 / 3,800円〜</dt><dd>14時までの注文で翌日着</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual image-hero" aria-label="夜道を歩く女性のイメージ">
+          <img src="images/hero-visual.png" alt="夜道を歩く女性のイラスト">
+        </div>
+      </section>
+
+      <section id="guide" class="trust-band" aria-label="morillionの安心ポイント">
+        <article>
+          <span>♡</span>
+          <h2>全品 国内検品</h2>
+          <p>発送前に動作確認をひとつずつ</p>
+        </article>
+        <article>
+          <span>↺</span>
+          <h2>30日間 返品OK</h2>
+          <p>合わなかったら気軽に交換</p>
+        </article>
+        <article>
+          <span>⚐</span>
+          <h2>サポートは女性スタッフ</h2>
+          <p>LINEで気軽に相談できます</p>
+        </article>
+        <article>
+          <span>◎</span>
+          <h2>あんしんブック付属</h2>
+          <p>防犯のコツも一緒にお届け</p>
+        </article>
+      </section>
+
+      <section class="section category-section">
+        <p class="section-kicker">Category</p>
+        <h2>シーンで選ぶ防犯アイテム</h2>
+        <p class="section-lead">使う場所や目的に合わせて、自分に合うアイテムを選べます。</p>
+        <div class="category-grid">
+          <a href="https://www.amazon.co.jp/dp/B0GKLRSCWT?th=1" target="_blank" rel="noopener noreferrer"><span class="stripe blue"></span><strong>防犯ブザー</strong><small>音で守る</small></a>
+          <a href="https://www.amazon.co.jp/dp/B0CW1SXRZ3" target="_blank" rel="noopener noreferrer"><span class="stripe cream"></span><strong>催涙スプレー</strong><small>距離を取る</small></a>
+          <a href="https://www.amazon.co.jp/dp/B0FQNVKZSG" target="_blank" rel="noopener noreferrer"><span class="stripe green"></span><strong>見守りGPS</strong><small>つながりで守る</small></a>
+          <a href="https://www.amazon.co.jp/dp/B0G2L3BVNR?th=1" target="_blank" rel="noopener noreferrer"><span class="stripe coral"></span><strong>防犯アラーム</strong><small>家を守る</small></a>
+          <a href="https://www.amazon.co.jp/dp/B0G4S7TCGK" target="_blank" rel="noopener noreferrer"><span class="stripe sand"></span><strong>護身グッズ</strong><small>備えを持つ</small></a>
+          <a href="#products"><span class="stripe sky"></span><strong>夜道のお守り</strong><small>毎日のお供に</small></a>
+        </div>
+      </section>
+
+      <section id="products" class="section products-section">
+        <p class="section-kicker">Pick up</p>
+        <h2>今月のおすすめ</h2>
+        <p class="section-lead">毎日の持ち歩きやすさを基準に選んだ注目アイテムです。</p>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image has-photo"><img src="images/buzzer-akb-01bk.jpg" alt="ELPA Me'more 防犯ブザー AKB-01BK"><b>NEW</b></div>
+            <p>120dB / 単4×2本</p>
+            <h3><a href="https://www.amazon.co.jp/dp/B0GKLRSCWT?th=1" target="_blank" rel="noopener noreferrer">ELPA Me'more 防犯アラーム</a></h3>
+            <div><strong>¥2,395</strong><span>★★★★★ <small>(48)</small></span></div>
+          </article>
+          <article class="product-card">
+            <div class="product-image has-photo"><img src="images/charm-alarm-mockup.png" alt="チャーム型 防犯アラーム"><b>おすすめ</b></div>
+            <p>鞄に付けるだけ</p>
+            <h3><a href="https://www.amazon.co.jp/dp/B0G4S7TCGK" target="_blank" rel="noopener noreferrer">チャーム型 防犯アラーム</a></h3>
+            <div><strong>Amazonで確認</strong><span>★★★★★ <small>(36)</small></span></div>
+          </article>
+          <article class="product-card">
+            <div class="product-image has-photo"><img src="images/spray-lilima.png" alt="Lilima 催涙スプレー"><b>再入荷</b></div>
+            <p>化粧ポーチサイズ</p>
+            <h3><a href="https://www.amazon.co.jp/dp/B0CW1SXRZ3" target="_blank" rel="noopener noreferrer">Lilima 催涙スプレー</a></h3>
+            <div><strong>Amazonで確認</strong><span>★★★★★ <small>(32)</small></span></div>
+          </article>
+          <article class="product-card">
+            <div class="product-image has-photo"><img src="images/gps-tag-mockup.png" alt="見守りGPSタグ"><b>人気</b></div>
+            <p>家族と位置共有</p>
+            <h3><a href="https://www.amazon.co.jp/dp/B0FQNVKZSG" target="_blank" rel="noopener noreferrer">見守りGPSタグ</a></h3>
+            <div><strong>Amazonで確認</strong><span>★★★★★ <small>(24)</small></span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="ranking" class="section ranking-section">
+        <p class="section-kicker">Ranking</p>
+        <h2>人気ランキング</h2>
+        <p class="section-lead">ご注文が多い順 — 2026年5月のリアルタイム集計</p>
+        <ol class="ranking-list">
+          <li><span>01</span><img class="thumb product-thumb" src="images/buzzer-akb-01bk.jpg" alt="ELPA Me'more 防犯ブザー AKB-01BK"><div><b><a href="https://www.amazon.co.jp/dp/B0GKLRSCWT?th=1" target="_blank" rel="noopener noreferrer">ELPA Me'more 防犯アラーム</a></b><small>持ち歩きやすさ ★★★★★ / バッグの中で誤作動しにくい設計</small></div><strong>¥2,395</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0GKLRSCWT?th=1" target="_blank" rel="noopener noreferrer">Amazonへ</a></li>
+          <li><span>02</span><img class="thumb product-thumb" src="images/gps-tag-mockup.png" alt="見守りGPSタグ"><div><b><a href="https://www.amazon.co.jp/dp/B0FQNVKZSG" target="_blank" rel="noopener noreferrer">見守りGPSタグ</a></b><small>小さな端末で家族と位置共有</small></div><strong>Amazonで確認</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0FQNVKZSG" target="_blank" rel="noopener noreferrer">Amazonへ</a></li>
+          <li><span>03</span><img class="thumb product-thumb" src="images/spray-lilima.png" alt="Lilima 催涙スプレー"><div><b><a href="https://www.amazon.co.jp/dp/B0CW1SXRZ3" target="_blank" rel="noopener noreferrer">Lilima 催涙スプレー</a></b><small>化粧ポーチにも入るコンパクト設計</small></div><strong>Amazonで確認</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0CW1SXRZ3" target="_blank" rel="noopener noreferrer">Amazonへ</a></li>
+          <li><span>04</span><img class="thumb product-thumb" src="images/window-alarm.jpg" alt="スマアラーム 窓用防犯アラーム"><div><b><a href="https://www.amazon.co.jp/dp/B0G2L3BVNR?th=1" target="_blank" rel="noopener noreferrer">スマアラーム 窓用防犯アラーム</a></b><small>窓や玄関に貼るだけの大音量アラーム</small></div><strong>¥2,780</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0G2L3BVNR?th=1" target="_blank" rel="noopener noreferrer">Amazonへ</a></li>
+          <li><span>05</span><img class="thumb product-thumb" src="images/charm-alarm-mockup.png" alt="チャーム型 防犯アラーム"><div><b><a href="https://www.amazon.co.jp/dp/B0G4S7TCGK" target="_blank" rel="noopener noreferrer">チャーム型 防犯アラーム</a></b><small>アクセサリー感覚で持てる防犯音</small></div><strong>Amazonで確認</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0G4S7TCGK" target="_blank" rel="noopener noreferrer">Amazonへ</a></li>
+        </ol>
+      </section>
+
+      <section id="story" class="story-section">
+        <div class="story-image">
+          <span>founder portrait</span>
+          <em>夜道のリサーチノート</em>
+        </div>
+        <div class="story-copy">
+          <p class="section-kicker">Our story</p>
+          <h2>防犯をもっと身近に</h2>
+          <p>morillion は、夜道のひとり歩きに感じる不安をきっかけに生まれました。</p>
+          <p>鞄に似合うこと、とっさに使えること、大切な人へ贈れること。暮らしに自然になじむ防犯アイテムを目指しています。</p>
+          <a class="button secondary" href="#column">もっと読む</a>
+        </div>
+      </section>
+
+      <section class="section voice-section">
+        <p class="section-kicker">Voice</p>
+        <h2>お客様の声</h2>
+        <p class="section-lead">購入後アンケートから、掲載許諾をいただいた声を紹介します。</p>
+        <div class="voice-grid">
+          <article><div><b>Y.M さん</b><span>★★★★★</span></div><small>26歳 / 一人暮らし</small><h3>毎日のお守りになっています</h3><p>通勤バッグに付けてから、夜道の気持ちが本当にラクに。デザインも可愛くて、見られても気にならないのが嬉しいです。</p></article>
+          <article><div><b>A.K さん</b><span>★★★★★</span></div><small>31歳 / 出張多め</small><h3>ホテルでも安心</h3><p>出張先のホテルでドアアラームを使っています。設置も簡単で、これがあるだけで眠れる安心感が違います。</p></article>
+          <article><div><b>S.T さん</b><span>★★★★★</span></div><small>23歳 / 学生</small><h3>母からのプレゼント</h3><p>上京するときに母から贈られました。「持ってて」と言われたとき、ちょっと泣きました。色味もやさしくて好きです。</p></article>
+        </div>
+      </section>
+
+      <section id="column" class="section column-section">
+        <div class="section-row">
+          <div>
+            <p class="section-kicker">Column</p>
+            <h2>防犯コラム</h2>
+            <p class="section-lead">日常に取り入れやすい防犯の知識を紹介します。</p>
+          </div>
+          <a href="#">すべての記事を見る →</a>
+        </div>
+        <div class="article-grid">
+          <article><div class="article-cover blue">article cover</div><small>夜道のコツ</small><h3>帰り道で意識したい5つの習慣</h3><p>2026.05.18 · 5 min read</p></article>
+          <article><div class="article-cover sand">article cover</div><small>一人暮らし</small><h3>玄関まわりの防犯チェックリスト</h3><p>2026.05.12 · 4 min read</p></article>
+          <article><div class="article-cover cream">article cover</div><small>Q&A</small><h3>催涙スプレーの基本と注意点</h3><p>2026.05.06 · 6 min read</p></article>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <p class="section-kicker">Letter from morillion</p>
+          <h2>安心に役立つ情報をお届け</h2>
+          <p>季節の防犯コラムや入荷情報、スタッフの使用レビューをお届けします。</p>
+        </div>
+        <form id="newsletterForm">
+          <label for="email" class="sr-only">メールアドレス</label>
+          <input id="email" type="email" placeholder="your@email.com" required>
+          <button type="submit">登録する</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span><strong>morillion</strong><small>SAFETY · for everyday</small></span>
+        </a>
+        <p>自分らしく歩ける毎日のために。やさしい防犯を暮らしのそばに。</p>
+      </div>
+      <nav>
+        <h2>Shop</h2>
+        <a href="#products">商品一覧</a>
+        <a href="#products">新着</a>
+        <a href="#products">セール</a>
+      </nav>
+      <nav>
+        <h2>About</h2>
+        <a href="#story">はじめての方へ</a>
+        <a href="#story">ブランドストーリー</a>
+        <a href="#guide">女性スタッフ紹介</a>
+      </nav>
+      <nav>
+        <h2>Support</h2>
+        <a href="#">配送・返品</a>
+        <a href="#">よくある質問</a>
+        <a href="#">お問い合わせ</a>
+        <a href="#">LINE相談</a>
+      </nav>
+      <p class="copyright">© 2026 morillion safety　<a href="#">プライバシーポリシー</a>　<a href="#">特定商取引法</a>　<a href="#">利用規約</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
