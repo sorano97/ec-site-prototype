@@ -1,6 +1,5 @@
 const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector("#site-nav");
-const cartCount = document.querySelector("#cartCount");
 const introLoader = document.querySelector("#introLoader");
 
 introLoader?.addEventListener("animationend", (event) => {
@@ -43,13 +42,6 @@ nav?.addEventListener("click", (event) => {
     menuButton?.setAttribute("aria-expanded", "false");
     nav.classList.remove("is-open");
   }
-});
-
-document.querySelectorAll(".mini-cart").forEach((button) => {
-  button.addEventListener("click", () => {
-    const current = Number(cartCount?.textContent || "0");
-    if (cartCount) cartCount.textContent = String(current + 1);
-  });
 });
 
 document.querySelector("#newsletterForm")?.addEventListener("submit", (event) => {
