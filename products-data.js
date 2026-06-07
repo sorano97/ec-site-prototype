@@ -41,7 +41,7 @@ if (productCatalog) {
 
     return `
       <article${product.anchor ? ` id="${product.anchor}"` : ""} class="catalog-card compact-card">
-        <div class="product-slot product-slot-${asin}"><img src="images/products/${asin}.jpg${imageVersion}" alt="${product.name}" loading="lazy"></div>
+        <div class="product-slot product-slot-${asin}"><img src="/ec-site-prototype/images/products/${asin}.jpg${imageVersion}" alt="${product.name}" loading="lazy"></div>
         <p class="product-tag">${product.category}</p>
         <h2><a href="${product.url}" target="_blank" rel="sponsored noopener noreferrer">${product.name}</a></h2>
         <p class="product-price">${product.price}</p>
