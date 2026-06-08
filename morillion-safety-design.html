@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>morillion safety — Design Exploration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@400;500;700&family=Kosugi+Maru&family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/global.css">
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f4f1ea;
+    font-family: "M PLUS Rounded 1c", system-ui, sans-serif;
+  }
+  #root { width: 100%; min-height: 100vh; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="components/shared.jsx"></script>
+<script type="text/babel" src="variations/v1.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "skyTone": "#9CD8E8",
+  "accent": "#FBD173",
+  "font": "zen",
+  "density": "comfy"
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  // Apply tweaks to root via CSS variables / data-attrs
+  React.useEffect(() => {
+    const html = document.documentElement;
+    html.style.setProperty("--sky-300", t.skyTone);
+
+    // derive shades from the picked sky tone
+    const lighter = mix(t.skyTone, "#ffffff", 0.55);
+    const lightest = mix(t.skyTone, "#ffffff", 0.78);
+    const lightestX = mix(t.skyTone, "#ffffff", 0.9);
+    const darker = mix(t.skyTone, "#1F4A5C", 0.35);
+    html.style.setProperty("--sky-200", lighter);
+    html.style.setProperty("--sky-100", lightest);
+    html.style.setProperty("--sky-50",  lightestX);
+    html.style.setProperty("--sky-500", darker);
+
+    // accent
+    html.style.setProperty("--accent-500", t.accent);
+    html.style.setProperty("--accent-700", mix(t.accent, "#000000", 0.30));
+    html.style.setProperty("--accent-200", mix(t.accent, "#ffffff", 0.55));
+    html.style.setProperty("--accent-50",  mix(t.accent, "#ffffff", 0.85));
+
+    html.setAttribute("data-font", t.font);
+    html.setAttribute("data-density", t.density);
+  }, [t]);
+
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection id="cover" title="morillion safety — トップページ"
+                   subtitle="女性向け防犯アイテムの紹介（Amazonアフィリエイト）サイト。配色・余白・フォントは右下のTweaksで調整できます。">
+          <DCPostIt color="amber" style={{ width: 320 }}>
+            <strong>このデザインについて</strong><br/>
+            採用されたA案を、実装版のコピー・商品情報に合わせて更新しました。<br/>
+            <br/>
+            Amazonアフィリエイト前提のため、カート・会員・送料・返品など自社販売を前提とした要素は削除しています。
+          </DCPostIt>
+        </DCSection>
+
+        <DCSection id="top" title="トップページ — やさしい朝の光"
+                   subtitle="白＋水色ベース / オレンジ寄りの黄色アクセント / 女性スタッフが選ぶ視点 / 「夜道に安心を」">
+          <DCArtboard id="v1" label="トップページ" width={1280} height={5760}>
+            <VariationOne />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="notes" title="次のステップ"
+                   subtitle="">
+          <DCPostIt color="sky" style={{ width: 360 }}>
+            <strong>調整できること</strong><br/>
+            ・水色のトーン (Tweaksで試せます)<br/>
+            ・差し色のトーン<br/>
+            ・フォントの種類<br/>
+            ・余白の好み (compact / regular / comfy)
+          </DCPostIt>
+          <DCPostIt color="amber" style={{ width: 360 }}>
+            <strong>次にできること</strong><br/>
+            ・各商品カードにAmazonアフィリエイトリンクを紐づけ<br/>
+            ・防犯コラム記事ページの作成<br/>
+            ・実写画像の差し替え (準備でき次第)<br/>
+            ・SP表示 (375px) の最適化
+          </DCPostIt>
+          <DCPostIt color="lilac" style={{ width: 360 }}>
+            <strong>デザインの考え方</strong><br/>
+            「夜道に安心を」をブランドの軸に。<br/>
+            女性スタッフの実体験・レビュー・選び方ガイドで、<br/>
+            「ひとりじゃない感」を共通言語にしました。
+          </DCPostIt>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Theme color" />
+        <TweakColor label="水色トーン" value={t.skyTone}
+          options={["#BEE3F0","#A8D8E8","#CFE9F1","#9CD8E8","#E5F3F8"]}
+          onChange={(v) => setTweak("skyTone", v)} />
+        <TweakColor label="差し色" value={t.accent}
+          options={["#E89B2C","#F2A93B","#F5C24A","#FBD173","#E08A2B"]}
+          onChange={(v) => setTweak("accent", v)} />
+
+        <TweakSection label="Typography" />
+        <TweakRadio label="フォント" value={t.font}
+          options={[
+            { value: "rounded", label: "丸ゴシック" },
+            { value: "zen", label: "Zen Maru" },
+            { value: "kosugi", label: "Kosugi" },
+          ]}
+          onChange={(v) => setTweak("font", v)} />
+
+        <TweakSection label="Layout" />
+        <TweakRadio label="余白" value={t.density}
+          options={[
+            { value: "compact", label: "compact" },
+            { value: "regular", label: "regular" },
+            { value: "comfy", label: "comfy" },
+          ]}
+          onChange={(v) => setTweak("density", v)} />
+      </TweaksPanel>
+    </>
+  );
+}
+
+// ---- color mix helper (sRGB) ----
+function mix(a, b, t) {
+  const pa = hex(a), pb = hex(b);
+  const r = Math.round(pa[0]*(1-t) + pb[0]*t);
+  const g = Math.round(pa[1]*(1-t) + pb[1]*t);
+  const bl = Math.round(pa[2]*(1-t) + pb[2]*t);
+  return "#" + [r,g,bl].map(x => x.toString(16).padStart(2,"0")).join("");
+}
+function hex(h) {
+  h = h.replace("#","");
+  if (h.length === 3) h = h.split("").map(c => c+c).join("");
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
