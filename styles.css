@@ -1642,10 +1642,43 @@ mark {
 .article-side {
   position: sticky;
   top: 100px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: blur(12px);
 }
 
-.article-side .column-cover {
-  margin-bottom: 24px;
+.article-side-image {
+  margin: 0 0 18px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--sky-50);
+}
+
+.article-side-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-side-kicker {
+  margin: 0 0 8px;
+}
+
+.article-side-name {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.article-side .button {
+  width: 100%;
+  justify-content: center;
 }
 
 .article-side p {

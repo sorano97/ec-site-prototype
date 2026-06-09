@@ -214,6 +214,93 @@ window.morillionArticles = {
   }
 };
 
+const articleSidebarRecommendations = {
+  "night-habits": {
+    image: "images/products/B0GKLRSCWT.jpg",
+    alt: "夜道で使いやすい防犯ブザー",
+    title: "すぐ取り出せる防犯ブザー",
+    href: "products.html#alarm"
+  },
+  "entrance-check": {
+    image: "images/products/B0G2L3BVNR.jpg",
+    alt: "玄関まわりの確認に使う窓用防犯アラーム",
+    title: "窓・ドアアラーム",
+    href: "products.html#home"
+  },
+  "alarm-guide": {
+    image: "images/products/B0C5MVW7QR.jpg",
+    alt: "持ち歩きやすい防犯ブザー",
+    title: "防犯ブザー",
+    href: "products.html#alarm"
+  },
+  "spray-basics": {
+    image: "images/products/SPRAY-LILIMA.png",
+    alt: "護身用スプレー",
+    title: "護身用スプレー",
+    href: "products.html"
+  },
+  "earphones": {
+    image: "images/products/B0GGXZ4G5D.jpg",
+    alt: "夜道で持ち歩きやすいキーチェーンライト",
+    title: "キーチェーンライト",
+    href: "products.html#light"
+  },
+  "location-sharing": {
+    image: "images/products/GPS-TAG.png",
+    alt: "位置共有に役立つGPSタグ",
+    title: "見守り用GPSタグ",
+    href: "products.html"
+  },
+  "hotel-safety": {
+    image: "images/products/B0D7D7P84Q.jpg",
+    alt: "宿泊先の安全確認に役立つスマートカメラ",
+    title: "スマートカメラ",
+    href: "products.html#camera"
+  },
+  "delivery": {
+    image: "images/products/B07YG7RNF2.jpg",
+    alt: "宅配時の確認に役立つドアベルカメラ",
+    title: "ドアベルカメラ",
+    href: "products.html#camera"
+  },
+  "window-security": {
+    image: "images/products/WINDOW-ALARM.jpg",
+    alt: "窓の防犯に使う窓用アラーム",
+    title: "窓用防犯アラーム",
+    href: "products.html#home"
+  },
+  "route-review": {
+    image: "images/products/B0C8DC5JYM.jpg",
+    alt: "帰宅ルートの見直しに持ちたい防犯ブザー",
+    title: "夜道向け防犯ブザー",
+    href: "products.html#alarm"
+  },
+  "carry-goods": {
+    image: "images/products/B0F846PZ38.jpg",
+    alt: "毎日持ち歩きやすい小型ライト",
+    title: "軽量キーチェーンライト",
+    href: "products.html#light"
+  },
+  "arrival-rule": {
+    image: "images/products/CHARM-ALARM.png",
+    alt: "見守り連絡に使えるチャーム型防犯アラーム",
+    title: "見守り用アラーム",
+    href: "products.html"
+  },
+  "alarm-position": {
+    image: "images/products/B08BNVHJ5J.jpg",
+    alt: "バッグに付けやすいハート型防犯ブザー",
+    title: "バッグに付ける防犯ブザー",
+    href: "products.html#alarm"
+  },
+  default: {
+    image: "images/products/B0GKLRSCWT.jpg",
+    alt: "防犯ブザー",
+    title: "防犯ブザー",
+    href: "products.html"
+  }
+};
+
 const articlePage = document.querySelector("#articlePage");
 
 if (articlePage) {
@@ -223,6 +310,8 @@ if (articlePage) {
   if (!article) {
     articlePage.innerHTML = '<section class="article-not-found"><h1>記事が見つかりません</h1><a href="columns.html">コラム一覧へ戻る</a></section>';
   } else {
+    const recommendation = articleSidebarRecommendations[id] || articleSidebarRecommendations.default;
+
     document.title = `${article.title} | morillion`;
     document.querySelector('meta[name="description"]').content = article.lead;
     articlePage.innerHTML = `
@@ -240,9 +329,12 @@ if (articlePage) {
           <p class="article-note">危険を感じた場合は、その場を離れて安全な場所へ移動し、緊急時は110番してください。</p>
         </article>
         <aside class="article-side">
-          <div class="column-cover ${article.color}" aria-hidden="true"></div>
-          <p>防犯用品を選ぶ</p>
-          <a class="button secondary" href="products.html">商品一覧を見る</a>
+          <figure class="article-side-image">
+            <img src="${recommendation.image}" alt="${recommendation.alt}" loading="lazy" width="960" height="640">
+          </figure>
+          <p class="article-side-kicker">防犯用品を選ぶ</p>
+          <p class="article-side-name">${recommendation.title}</p>
+          <a class="button secondary" href="${recommendation.href}">商品一覧を見る</a>
         </aside>
       </div>`;
   }
