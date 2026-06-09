@@ -2,6 +2,10 @@
 
 set -u
 
+script_dir=${0:A:h}
+repo_root=${script_dir:h}
+cd "$repo_root"
+
 mkdir -p images/products
 
 rg -o 'https://www\.amazon\.co\.jp/dp/[A-Z0-9]+' products-data.js | sed 's#.*/##' | while IFS= read -r asin; do

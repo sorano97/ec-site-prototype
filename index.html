@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>morillion | 女性向け夜道の防犯アイテム紹介サイト</title>
     <meta name="description" content="morillionは、夜道や一人暮らしの不安に寄り添う、防犯アイテムの選び方とAmazon掲載商品を紹介する情報サイトです。">
-    <link rel="stylesheet" href="styles.css?v=20260607-10">
+    <link rel="stylesheet" href="styles.css?v=20260609-15">
   </head>
   <body>
     <div class="intro-loader" id="introLoader" aria-label="読み込み中">
@@ -13,19 +13,18 @@
     </div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="morillion home">
-        <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+        <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="主要ナビゲーション">
         <a href="products.html">商品一覧</a>
-        <a href="#guide">はじめての方へ</a>
-        <a href="#ranking">ランキング</a>
         <a href="columns.html">防犯コラム</a>
+        <a href="about.html">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button type="button" aria-label="検索">⌕</button>
+        <button type="button" aria-label="検索" data-search-open><svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></svg></button>
         <span class="affiliate-note">Amazon紹介リンクを含みます</span>
       </div>
     </header>
@@ -39,7 +38,7 @@
           </h1>
           <p class="lead">一人暮らしの帰り道や出張先でも、毎日に寄り添う防犯アイテムを紹介します。</p>
           <div class="hero-buttons">
-            <a class="button primary" href="#guide">はじめての方へ</a>
+            <a class="button primary" href="about.html">はじめての方へ</a>
             <a class="button secondary" href="products.html">商品をみる</a>
           </div>
         </div>
@@ -86,9 +85,14 @@
       </section>
 
       <section id="products" class="section products-section">
-        <p class="section-kicker">Pick up</p>
-        <h2>今月のおすすめ</h2>
-        <p class="section-lead">毎日の持ち歩きやすさを基準に選んだ注目アイテムです。各商品リンクはAmazonの商品ページへ移動します。</p>
+        <div class="section-row">
+          <div>
+            <p class="section-kicker">Pick up</p>
+            <h2>今月のおすすめ</h2>
+            <p class="section-lead">毎日の持ち歩きやすさを基準に選んだ注目アイテムです。各商品リンクはAmazonの商品ページへ移動します。</p>
+          </div>
+          <a href="products.html">商品一覧を見る →</a>
+        </div>
         <div class="product-grid">
           <article class="product-card">
             <div class="product-image has-photo"><img src="images/products/B0GKLRSCWT.jpg" alt="ELPA Me'more 防犯アラーム AKB-01BK"><b>持ち歩き</b></div>
@@ -118,9 +122,14 @@
       </section>
 
       <section id="ranking" class="section ranking-section">
-        <p class="section-kicker">Ranking</p>
-        <h2>人気ランキング</h2>
-        <p class="section-lead">持ち歩きやすさと日常への取り入れやすさを基準にした注目順です。</p>
+        <div class="section-row">
+          <div>
+            <p class="section-kicker">Ranking</p>
+            <h2>人気ランキング</h2>
+            <p class="section-lead">持ち歩きやすさと日常への取り入れやすさを基準にした注目順です。</p>
+          </div>
+          <a href="products.html">商品一覧を見る →</a>
+        </div>
         <ol class="ranking-list">
           <li><span>01</span><img class="thumb product-thumb" src="images/products/B0GKLRSCWT.jpg" alt="ELPA Me'more 防犯アラーム"><div><b><a href="https://www.amazon.co.jp/dp/B0GKLRSCWT" target="_blank" rel="sponsored noopener noreferrer">ELPA Me'more 防犯アラーム</a></b><small>毎日のバッグに付けやすい携帯用防犯ブザー</small></div><strong>¥1,855</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0GKLRSCWT" target="_blank" rel="sponsored noopener noreferrer">Amazonへ</a></li>
           <li><span>02</span><img class="thumb product-thumb" src="images/products/B0CLL9YHVR.jpg" alt="アスカ プリンセス防犯ブザー ポンポン"><div><b><a href="https://www.amazon.co.jp/dp/B0CLL9YHVR" target="_blank" rel="sponsored noopener noreferrer">アスカ プリンセス防犯ブザー ポンポン</a></b><small>服装やバッグになじみやすいベージュカラー</small></div><strong>¥999</strong><a class="mini-cart" href="https://www.amazon.co.jp/dp/B0CLL9YHVR" target="_blank" rel="sponsored noopener noreferrer">Amazonへ</a></li>
@@ -140,7 +149,7 @@
           <h2>防犯をもっと身近に</h2>
           <p>morillion は、夜道のひとり歩きに感じる不安をきっかけに生まれました。</p>
           <p>鞄に似合うこと、とっさに使えること、大切な人へ贈れること。暮らしに自然になじむ防犯アイテムを目指しています。</p>
-          <a class="button secondary" href="#column">もっと読む</a>
+          <a class="button secondary" href="about.html">もっと読む</a>
         </div>
       </section>
 
@@ -165,9 +174,9 @@
           <a href="columns.html">すべての記事を見る →</a>
         </div>
         <div class="article-grid">
-          <article><a href="article.html?id=night-habits"><div class="article-cover blue" aria-hidden="true"></div><small>夜道のコツ</small><h3>帰り道で意識したい5つの習慣</h3><p>2026.05.18 · 5 min read</p></a></article>
-          <article><a href="article.html?id=entrance-check"><div class="article-cover sand" aria-hidden="true"></div><small>一人暮らし</small><h3>玄関まわりの防犯チェックリスト</h3><p>2026.05.12 · 4 min read</p></a></article>
-          <article><a href="article.html?id=spray-basics"><div class="article-cover cream" aria-hidden="true"></div><small>Q&amp;A</small><h3>催涙スプレーの基本と注意点</h3><p>2026.05.06 · 6 min read</p></a></article>
+          <article><a href="article.html?id=night-habits"><div class="article-cover article-cover-image"><img src="images/columns/night-habits.png" alt="帰り道で意識したい5つの習慣" width="1536" height="1024" loading="lazy"></div><small>夜道のコツ</small><h3>帰り道で意識したい5つの習慣</h3><p>2026.05.18 · 5 min read</p></a></article>
+          <article><a href="article.html?id=entrance-check"><div class="article-cover article-cover-image"><img src="images/columns/entrance-check.png" alt="玄関まわりの防犯チェックリスト" width="1536" height="1024" loading="lazy"></div><small>一人暮らし</small><h3>玄関まわりの防犯チェックリスト</h3><p>2026.05.12 · 4 min read</p></a></article>
+          <article><a href="article.html?id=spray-basics"><div class="article-cover article-cover-image"><img src="images/columns/spray-basics.png" alt="催涙スプレーの基本と注意点" width="1536" height="1024" loading="lazy"></div><small>Q&amp;A</small><h3>催涙スプレーの基本と注意点</h3><p>2026.05.06 · 6 min read</p></a></article>
         </div>
       </section>
 
@@ -188,7 +197,7 @@
     <footer class="site-footer">
       <div>
         <a class="brand" href="#top">
-          <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+          <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
         </a>
         <p>自分らしく歩ける毎日のために。やさしい防犯を暮らしのそばに。</p>
       </div>
@@ -200,8 +209,8 @@
       </nav>
       <nav>
         <h2>About</h2>
-        <a href="#story">はじめての方へ</a>
-        <a href="#guide">選び方の考え方</a>
+        <a href="about.html">はじめての方へ</a>
+        <a href="about.html#values">選び方の考え方</a>
       </nav>
       <nav>
         <h2>Legal</h2>
@@ -211,6 +220,8 @@
       </nav>
       <p class="copyright">価格・在庫・配送・返品条件はリンク先のAmazon.co.jpでご確認ください。<br>© 2026 morillion safety　<a href="#">プライバシーポリシー</a>　<a href="#">運営者情報</a>　<a href="#">利用規約</a></p>
     </footer>
-    <script src="script.js?v=20260607-10"></script>
+    <script src="products-data.js?v=20260609-2"></script>
+    <script src="column-articles.js?v=20260609-4"></script>
+    <script src="script.js?v=20260609-3"></script>
   </body>
 </html>

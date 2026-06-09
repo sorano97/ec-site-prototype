@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>商品一覧 | morillion</title>
     <meta name="description" content="morillionの商品一覧ページです。夜道や一人暮らしの不安に備える防犯ブザー、催涙スプレー、見守りGPS、防犯アラームなどを紹介します。">
-    <link rel="stylesheet" href="styles.css?v=20260607-10">
+    <link rel="stylesheet" href="styles.css?v=20260609-15">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html#top" aria-label="morillion home">
-        <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+        <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="主要ナビゲーション">
         <a href="products.html">商品一覧</a>
-        <a href="index.html#guide">はじめての方へ</a>
-        <a href="index.html#ranking">ランキング</a>
         <a href="columns.html">防犯コラム</a>
+        <a href="about.html">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button type="button" aria-label="検索">⌕</button>
+        <button type="button" aria-label="検索" data-search-open><svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></svg></button>
         <span class="affiliate-note">Amazon紹介リンクを含みます</span>
       </div>
     </header>
@@ -30,7 +29,7 @@
     <main>
       <section class="listing-hero">
         <p class="section-kicker">Products</p>
-        <h1>商品一覧</h1>
+        <h1 class="listing-logo-title"><img src="images/products-title-logo.png" alt="商品一覧" width="2570" height="891"></h1>
         <p>防犯ブザー、窓・ドア用アラーム、ライト、見守りカメラなど、調査した31商品をまとめました。</p>
         <p>価格は2026年6月7日時点のAmazon表示です。</p>
       </section>
@@ -47,6 +46,12 @@
             <a href="#light">ライト</a>
             <a href="#camera">カメラ・ドアベル</a>
           </div>
+        </div>
+
+        <div class="product-search-box">
+          <label for="productSearch">商品一覧を検索</label>
+          <input id="productSearch" type="search" placeholder="商品名・カテゴリから検索" autocomplete="off">
+          <p id="productSearchStatus" aria-live="polite">31件の商品を掲載しています</p>
         </div>
 
         <div id="productCatalog" class="catalog-grid compact-catalog">
@@ -184,7 +189,7 @@
     <footer class="site-footer">
       <div>
         <a class="brand" href="index.html#top">
-          <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+          <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
         </a>
         <p>自分らしく歩ける毎日のために。やさしい防犯を暮らしのそばに。</p>
       </div>
@@ -196,8 +201,8 @@
       </nav>
       <nav>
         <h2>About</h2>
-        <a href="index.html#story">はじめての方へ</a>
-        <a href="index.html#guide">選び方の考え方</a>
+        <a href="about.html">はじめての方へ</a>
+        <a href="about.html#values">選び方の考え方</a>
       </nav>
       <nav>
         <h2>Legal</h2>
@@ -207,7 +212,8 @@
       </nav>
       <p class="copyright">価格・在庫・配送・返品条件はリンク先のAmazon.co.jpでご確認ください。<br>© 2026 morillion safety　<a href="#">プライバシーポリシー</a>　<a href="#">運営者情報</a>　<a href="#">利用規約</a></p>
     </footer>
-    <script src="products-data.js?v=20260607-11"></script>
-    <script src="script.js?v=20260607-10"></script>
+    <script src="products-data.js?v=20260609-2"></script>
+    <script src="column-articles.js?v=20260609-4"></script>
+    <script src="script.js?v=20260609-3"></script>
   </body>
 </html>

@@ -2,6 +2,10 @@
 
 set -u
 
+script_dir=${0:A:h}
+repo_root=${script_dir:h}
+cd "$repo_root"
+
 rg -o 'https://www\.amazon\.co\.jp/dp/[A-Z0-9]+' products-data.js | sed 's#.*/##' | while IFS= read -r asin; do
   page="/tmp/amazon-price-${asin}.html"
   curl -L -A 'Mozilla/5.0' -s "https://www.amazon.co.jp/dp/${asin}" -o "$page"

@@ -1,4 +1,4 @@
-const products = [
+window.morillionProducts = [
   { category: "防犯ブザー", anchor: "alarm", name: "エルパ(ELPA) Me'more 防犯アラーム AKB-01BK", price: "¥1,855", url: "https://www.amazon.co.jp/dp/B0GKLRSCWT" },
   { category: "防犯ブザー", name: "Hion 防犯ブザー USB充電式 TYPE-C LEDライト付き 防犯アラーム 黒", price: "¥1,299", url: "https://www.amazon.co.jp/dp/B0C5MVW7QR" },
   { category: "防犯ブザー", name: "防犯ブザー USB充電式 Type-Cアップグレード LEDライト付き ブルー", price: "¥949", url: "https://www.amazon.co.jp/dp/B09B9RBZ8Q" },
@@ -35,12 +35,13 @@ const products = [
 const productCatalog = document.querySelector("#productCatalog");
 
 if (productCatalog) {
-  productCatalog.innerHTML = products.map((product) => {
+  productCatalog.innerHTML = window.morillionProducts.map((product) => {
     const asin = product.url.split("/dp/")[1];
     const imageVersion = ["B0GKLRSCWT", "B08BNVHJ5J", "B0C7GDLYVB"].includes(asin) ? "?v=2" : "";
 
     return `
-      <article${product.anchor ? ` id="${product.anchor}"` : ""} class="catalog-card compact-card">
+      <article id="product-${asin}" class="catalog-card compact-card">
+        ${product.anchor ? `<span id="${product.anchor}" class="catalog-anchor" aria-hidden="true"></span>` : ""}
         <div class="product-slot product-slot-${asin}"><img src="images/products/${asin}.jpg${imageVersion}" alt="${product.name}" loading="lazy"></div>
         <p class="product-tag">${product.category}</p>
         <h2><a href="${product.url}" target="_blank" rel="sponsored noopener noreferrer">${product.name}</a></h2>

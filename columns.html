@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>防犯コラム | morillion</title>
     <meta name="description" content="夜道、一人暮らし、玄関や窓の防犯、防犯グッズの選び方など、日常に取り入れやすい防犯知識を紹介します。">
-    <link rel="stylesheet" href="styles.css?v=20260607-10">
+    <link rel="stylesheet" href="styles.css?v=20260609-17">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html#top" aria-label="morillion home">
-        <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+        <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="主要ナビゲーション">
         <a href="products.html">商品一覧</a>
-        <a href="index.html#guide">はじめての方へ</a>
-        <a href="index.html#ranking">ランキング</a>
         <a href="columns.html">防犯コラム</a>
+        <a href="about.html">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button type="button" aria-label="検索">⌕</button>
+        <button type="button" aria-label="検索" data-search-open><svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></svg></button>
         <span class="affiliate-note">Amazon紹介リンクを含みます</span>
       </div>
     </header>
@@ -30,7 +29,7 @@
     <main>
       <section class="listing-hero column-list-hero">
         <p class="section-kicker">Safety journal</p>
-        <h1>防犯コラム</h1>
+        <h1 class="listing-logo-title"><img src="images/columns-title-logo.png" alt="防犯コラム" width="2571" height="933"></h1>
         <p>知っているだけで変えられる、夜道や一人暮らしの小さな備え。今日から取り入れやすい防犯のヒントをまとめています。</p>
       </section>
 
@@ -38,17 +37,21 @@
         <div class="column-filter">
           <span>記事を探す</span>
           <nav aria-label="記事カテゴリ">
-            <a href="#all">すべて</a>
-            <a href="#night">夜道</a>
-            <a href="#living">一人暮らし</a>
-            <a href="#goods">防犯グッズ</a>
-            <a href="#travel">旅行・出張</a>
-            <a href="#qa">Q&amp;A</a>
+            <button class="is-active" type="button" data-column-filter="all">すべて</button>
+            <button type="button" data-column-filter="night">夜道</button>
+            <button type="button" data-column-filter="living">一人暮らし</button>
+            <button type="button" data-column-filter="goods">防犯グッズ</button>
+            <button type="button" data-column-filter="monitoring">見守り</button>
+            <button type="button" data-column-filter="travel">旅行・出張</button>
+            <button type="button" data-column-filter="home">家の防犯</button>
+            <button type="button" data-column-filter="family">家族</button>
+            <button type="button" data-column-filter="qa">Q&amp;A</button>
           </nav>
         </div>
+        <p class="column-filter-status" aria-live="polite">すべての記事を表示しています</p>
 
-        <article class="featured-column">
-          <div class="column-cover column-cover-large blue" aria-hidden="true"></div>
+        <article class="featured-column" data-column-category="night">
+          <a class="column-image-link" href="article.html?id=night-habits"><img class="column-image column-image-large" src="images/columns/night-habits.png" alt="帰り道で意識したい5つの習慣" width="1536" height="1024"></a>
           <div>
             <p class="column-category">夜道のコツ</p>
             <h2><a href="article.html?id=night-habits">帰り道で意識したい5つの習慣</a></h2>
@@ -59,96 +62,96 @@
         </article>
 
         <div id="all" class="column-list-grid">
-          <article id="living" class="column-list-card">
-            <div class="column-cover sand" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="living">
+            <a class="column-image-link" href="article.html?id=entrance-check"><img class="column-image" src="images/columns/entrance-check.png" alt="玄関まわりの防犯チェックリスト" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">一人暮らし</p>
             <h2><a href="article.html?id=entrance-check">玄関まわりの防犯チェックリスト</a></h2>
             <p>鍵、郵便受け、ドアスコープなど、入居時に確認したいポイント。</p>
             <p class="column-meta">2026.05.12　4 min read</p>
           </article>
 
-          <article id="goods" class="column-list-card">
-            <div class="column-cover cream" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="goods">
+            <a class="column-image-link" href="article.html?id=alarm-guide"><img class="column-image" src="images/columns/alarm-guide.png" alt="防犯ブザーを選ぶときに見るポイント" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">防犯グッズ</p>
             <h2><a href="article.html?id=alarm-guide">防犯ブザーを選ぶときに見るポイント</a></h2>
             <p>音量だけでなく、鳴らし方や誤作動のしにくさも確認します。</p>
             <p class="column-meta">2026.05.09　6 min read</p>
           </article>
 
-          <article id="qa" class="column-list-card">
-            <div class="column-cover coral" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="qa">
+            <a class="column-image-link" href="article.html?id=spray-basics"><img class="column-image" src="images/columns/spray-basics.png" alt="催涙スプレーの基本と注意点" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">Q&amp;A</p>
             <h2><a href="article.html?id=spray-basics">催涙スプレーの基本と注意点</a></h2>
             <p>携帯や保管、使用時に知っておきたい基本事項を整理。</p>
             <p class="column-meta">2026.05.06　6 min read</p>
           </article>
 
-          <article id="night" class="column-list-card">
-            <div class="column-cover blue" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="night">
+            <a class="column-image-link" href="article.html?id=earphones"><img class="column-image" src="images/columns/earphones.png" alt="イヤホンをしながら歩くときの注意点" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">夜道</p>
             <h2><a href="article.html?id=earphones">イヤホンをしながら歩くときの注意点</a></h2>
             <p>周囲の音を遮りすぎず、異変に気づくための使い方。</p>
             <p class="column-meta">2026.04.28　4 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover green" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="monitoring">
+            <a class="column-image-link" href="article.html?id=location-sharing"><img class="column-image" src="images/columns/location-sharing.png" alt="位置共有を始める前に決めておくこと" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">見守り</p>
             <h2><a href="article.html?id=location-sharing">位置共有を始める前に決めておくこと</a></h2>
             <p>共有する相手や時間帯、プライバシーのルールを考えます。</p>
             <p class="column-meta">2026.04.21　5 min read</p>
           </article>
 
-          <article id="travel" class="column-list-card">
-            <div class="column-cover sand" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="travel">
+            <a class="column-image-link" href="article.html?id=hotel-safety"><img class="column-image" src="images/columns/hotel-safety.png" alt="ホテルに着いたら確認したい防犯ポイント" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">旅行・出張</p>
             <h2><a href="article.html?id=hotel-safety">ホテルに着いたら確認したい防犯ポイント</a></h2>
             <p>ドア、窓、非常口など、入室後にできる短い確認リスト。</p>
             <p class="column-meta">2026.04.15　5 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover cream" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="living">
+            <a class="column-image-link" href="article.html?id=delivery"><img class="column-image" src="images/columns/delivery.png" alt="宅配便を受け取るときの小さな対策" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">一人暮らし</p>
             <h2><a href="article.html?id=delivery">宅配便を受け取るときの小さな対策</a></h2>
             <p>置き配やインターホンを活用して対面時間を減らす工夫。</p>
             <p class="column-meta">2026.04.08　4 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover coral" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="home">
+            <a class="column-image-link" href="article.html?id=window-security"><img class="column-image" src="images/columns/window-security.png" alt="窓の防犯を見直す3つの視点" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">家の防犯</p>
             <h2><a href="article.html?id=window-security">窓の防犯を見直す3つの視点</a></h2>
             <p>補助錠、センサー、外からの見え方を順番に確認します。</p>
             <p class="column-meta">2026.03.30　5 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover blue" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="night">
+            <a class="column-image-link" href="article.html?id=route-review"><img class="column-image" src="images/columns/route-review.png" alt="いつもの帰宅ルートを見直す方法" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">夜道</p>
             <h2><a href="article.html?id=route-review">いつもの帰宅ルートを見直す方法</a></h2>
             <p>明るさ、人通り、逃げ込める場所を地図で確認する習慣。</p>
             <p class="column-meta">2026.03.22　5 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover green" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="goods">
+            <a class="column-image-link" href="article.html?id=carry-goods"><img class="column-image" src="images/columns/carry-goods.png" alt="毎日持ち歩ける防犯グッズの選び方" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">防犯グッズ</p>
             <h2><a href="article.html?id=carry-goods">毎日持ち歩ける防犯グッズの選び方</a></h2>
             <p>重さ、サイズ、取り出しやすさから無理のない備えを選びます。</p>
             <p class="column-meta">2026.03.15　6 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover sand" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="family">
+            <a class="column-image-link" href="article.html?id=arrival-rule"><img class="column-image" src="images/columns/arrival-rule.png" alt="帰宅連絡のルールを無理なく続けるコツ" width="1536" height="1024" loading="lazy"></a>
             <p class="column-category">家族</p>
             <h2><a href="article.html?id=arrival-rule">帰宅連絡のルールを無理なく続けるコツ</a></h2>
             <p>連絡が負担にならない頻度や合図を家族で決める方法。</p>
             <p class="column-meta">2026.03.08　4 min read</p>
           </article>
 
-          <article class="column-list-card">
-            <div class="column-cover cream" aria-hidden="true"></div>
+          <article class="column-list-card" data-column-category="qa">
+            <a class="column-image-link" href="article.html?id=alarm-position"><img class="column-image" src="images/columns/alarm-position.png" alt="防犯ブザーはどこにつけるのが正解？" width="1402" height="1122" loading="lazy"></a>
             <p class="column-category">Q&amp;A</p>
             <h2><a href="article.html?id=alarm-position">防犯ブザーはどこにつけるのが正解？</a></h2>
             <p>緊急時に片手ですぐ届く位置を、バッグ別に考えます。</p>
@@ -161,7 +164,7 @@
     <footer class="site-footer">
       <div>
         <a class="brand" href="index.html#top">
-          <span class="brand-logo-crop"><img class="brand-logo-image" src="image.webp" alt="Morillion"></span>
+          <span class="brand-logo-crop"><img class="brand-logo-image" src="images/brand-logo.png" alt="Morillion"></span>
         </a>
         <p>自分らしく歩ける毎日のために。やさしい防犯を暮らしのそばに。</p>
       </div>
@@ -173,8 +176,8 @@
       </nav>
       <nav>
         <h2>About</h2>
-        <a href="index.html#story">はじめての方へ</a>
-        <a href="index.html#guide">選び方の考え方</a>
+        <a href="about.html">はじめての方へ</a>
+        <a href="about.html#values">選び方の考え方</a>
       </nav>
       <nav>
         <h2>Legal</h2>
@@ -184,6 +187,8 @@
       </nav>
       <p class="copyright">価格・在庫・配送・返品条件はリンク先のAmazon.co.jpでご確認ください。<br>© 2026 morillion safety　<a href="#">プライバシーポリシー</a>　<a href="#">運営者情報</a>　<a href="#">利用規約</a></p>
     </footer>
-    <script src="script.js?v=20260607-10"></script>
+    <script src="products-data.js?v=20260609-2"></script>
+    <script src="column-articles.js?v=20260609-4"></script>
+    <script src="script.js?v=20260609-4"></script>
   </body>
 </html>
