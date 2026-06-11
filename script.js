@@ -3,6 +3,74 @@ const nav = document.querySelector("#site-nav");
 const introLoader = document.querySelector("#introLoader");
 const introSeenKey = "morillionIntroSeen";
 
+const trustBand = document.querySelector(".trust-band");
+const mobileLayout = window.matchMedia("(max-width: 720px)");
+let trustBandAnimation = 0;
+let trustBandLoopWidth = 0;
+let trustBandPreviousTime = 0;
+let trustBandPaused = false;
+
+const stopTrustBandLoop = () => {
+  cancelAnimationFrame(trustBandAnimation);
+  trustBandAnimation = 0;
+  trustBandPreviousTime = 0;
+};
+
+const removeTrustBandClones = () => {
+  trustBand?.querySelectorAll("[data-loop-clone]").forEach((item) => item.remove());
+};
+
+const animateTrustBand = (time) => {
+  if (!trustBand || !mobileLayout.matches) return;
+
+  if (!trustBandPaused && trustBandLoopWidth > 0 && trustBandPreviousTime) {
+    trustBand.scrollLeft += Math.min(time - trustBandPreviousTime, 32) * 0.025;
+
+    if (trustBand.scrollLeft >= trustBandLoopWidth) {
+      trustBand.scrollLeft -= trustBandLoopWidth;
+    }
+  }
+
+  trustBandPreviousTime = time;
+  trustBandAnimation = requestAnimationFrame(animateTrustBand);
+};
+
+const setupTrustBandLoop = () => {
+  if (!trustBand) return;
+
+  stopTrustBandLoop();
+  removeTrustBandClones();
+  trustBand.scrollLeft = 0;
+
+  if (!mobileLayout.matches) return;
+
+  const items = [...trustBand.children];
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute("data-loop-clone", "");
+    clone.setAttribute("aria-hidden", "true");
+    trustBand.appendChild(clone);
+  });
+
+  const firstClone = trustBand.querySelector("[data-loop-clone]");
+  trustBandLoopWidth = firstClone instanceof HTMLElement
+    ? firstClone.offsetLeft - trustBand.firstElementChild.offsetLeft
+    : 0;
+  trustBandAnimation = requestAnimationFrame(animateTrustBand);
+};
+
+trustBand?.addEventListener("pointerdown", () => {
+  trustBandPaused = true;
+});
+
+window.addEventListener("pointerup", () => {
+  trustBandPaused = false;
+  trustBandPreviousTime = 0;
+});
+
+mobileLayout.addEventListener("change", setupTrustBandLoop);
+window.addEventListener("load", setupTrustBandLoop);
+
 if (introLoader) {
   try {
     if (sessionStorage.getItem(introSeenKey)) {
