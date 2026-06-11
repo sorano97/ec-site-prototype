@@ -1,6 +1,20 @@
 const menuButton = document.querySelector(".menu-button");
 const nav = document.querySelector("#site-nav");
 const introLoader = document.querySelector("#introLoader");
+const introSeenKey = "morillionIntroSeen";
+
+if (introLoader) {
+  try {
+    if (sessionStorage.getItem(introSeenKey)) {
+      introLoader.classList.add("is-hidden");
+      introLoader.remove();
+    } else {
+      sessionStorage.setItem(introSeenKey, "1");
+    }
+  } catch {
+    introLoader.classList.remove("is-hidden");
+  }
+}
 
 const searchItems = [
   ...(window.morillionProducts || []).map((product) => ({
@@ -19,41 +33,20 @@ const searchItems = [
   }))
 ];
 
-const searchDialog = document.createElement("div");
-searchDialog.className = "search-dialog";
-searchDialog.hidden = true;
-searchDialog.innerHTML = `
-  <div class="search-backdrop" data-search-close></div>
-  <section class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
-    <div class="search-panel-head">
-      <div>
-        <p class="section-kicker">Site search</p>
-        <h2 id="searchTitle">商品・コラムを検索</h2>
-      </div>
-      <button class="search-close" type="button" aria-label="検索を閉じる" data-search-close>×</button>
-    </div>
-    <label class="search-field">
-      <span class="sr-only">検索キーワード</span>
-      <input type="search" placeholder="例：防犯ブザー、夜道、窓" autocomplete="off">
-    </label>
-    <p class="search-status" aria-live="polite">キーワードを入力してください</p>
-    <div class="search-results"></div>
-  </section>`;
-document.body.appendChild(searchDialog);
-
-const searchInput = searchDialog.querySelector("input");
-const searchStatus = searchDialog.querySelector(".search-status");
-const searchResults = searchDialog.querySelector(".search-results");
+const headerSearchWrap = document.querySelector(".header-search");
+const headerSearchForm = document.querySelector("[data-header-search]");
+const searchInput = document.querySelector("[data-search-input]");
+const headerSearchResults = document.querySelector("[data-header-search-results]");
 
 const normalizeSearchText = (value) => value.toLowerCase().normalize("NFKC").replace(/\s+/g, "");
 
 const renderSearchResults = () => {
-  if (!(searchInput instanceof HTMLInputElement) || !searchStatus || !searchResults) return;
+  if (!(searchInput instanceof HTMLInputElement) || !headerSearchResults) return;
   const query = normalizeSearchText(searchInput.value.trim());
 
   if (!query) {
-    searchStatus.textContent = "キーワードを入力してください";
-    searchResults.innerHTML = "";
+    headerSearchResults.hidden = true;
+    headerSearchResults.innerHTML = "";
     return;
   }
 
@@ -61,37 +54,43 @@ const renderSearchResults = () => {
     normalizeSearchText(`${item.title} ${item.category} ${item.detail}`).includes(query)
   );
 
-  searchStatus.textContent = matches.length ? `${matches.length}件見つかりました` : "該当する商品・コラムはありません";
-  searchResults.innerHTML = matches.slice(0, 20).map((item) => `
-    <a class="search-result" href="${item.href}">
-      <span class="search-result-type">${item.type}・${item.category}</span>
-      <strong>${item.title}</strong>
-      <small>${item.detail}</small>
-    </a>`).join("");
+  headerSearchResults.hidden = false;
+  headerSearchResults.innerHTML = `
+    <p class="search-status" aria-live="polite">${matches.length ? `${matches.length}件見つかりました` : "該当する商品・コラムはありません"}</p>
+    <div class="search-results">
+      ${matches.slice(0, 20).map((item) => `
+        <a class="search-result" href="${item.href}">
+          <span class="search-result-type">${item.type}・${item.category}</span>
+          <strong>${item.title}</strong>
+          <small>${item.detail}</small>
+        </a>`).join("")}
+    </div>`;
 };
 
-const openSearch = () => {
-  searchDialog.hidden = false;
-  document.body.classList.add("search-open");
-  requestAnimationFrame(() => searchInput?.focus());
-};
-
-const closeSearch = () => {
-  searchDialog.hidden = true;
-  document.body.classList.remove("search-open");
-};
-
-searchDialog.addEventListener("click", (event) => {
-  if (event.target instanceof Element && event.target.closest("[data-search-close]")) closeSearch();
-});
 searchInput?.addEventListener("input", renderSearchResults);
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !searchDialog.hidden) closeSearch();
+searchInput?.addEventListener("focus", renderSearchResults);
+headerSearchForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!(searchInput instanceof HTMLInputElement)) return;
+  const query = normalizeSearchText(searchInput.value.trim());
+  if (!query) return;
+  const firstMatch = searchItems.find((item) =>
+    normalizeSearchText(`${item.title} ${item.category} ${item.detail}`).includes(query)
+  );
+  if (firstMatch) {
+    window.location.href = firstMatch.href;
+  }
 });
-
-document.addEventListener("click", (event) => {
-  if (event.target instanceof Element && event.target.closest("[data-search-open]")) {
-    openSearch();
+headerSearchWrap?.addEventListener("focusout", (event) => {
+  if (!(event.currentTarget instanceof HTMLElement)) return;
+  const nextTarget = event.relatedTarget;
+  if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+    if (headerSearchResults) headerSearchResults.hidden = true;
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && headerSearchResults && !headerSearchResults.hidden) {
+    headerSearchResults.hidden = true;
   }
 });
 

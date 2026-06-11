@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>morillion | 女性向け夜道の防犯アイテム紹介サイト</title>
     <meta name="description" content="morillionは、夜道や一人暮らしの不安に寄り添う、防犯アイテムの選び方とAmazon掲載商品を紹介する情報サイトです。">
-    <link rel="stylesheet" href="styles.css?v=20260609-15">
+    <script>
+      try {
+        if (sessionStorage.getItem("morillionIntroSeen")) {
+          document.documentElement.classList.add("intro-seen");
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css?v=20260609-31">
   </head>
   <body>
     <div class="intro-loader" id="introLoader" aria-label="読み込み中">
@@ -24,8 +31,16 @@
         <a href="about.html">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button type="button" aria-label="検索" data-search-open><svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></svg></button>
-        <span class="affiliate-note">Amazon紹介リンクを含みます</span>
+        <div class="header-search">
+          <form class="header-search-form" data-header-search>
+            <label class="sr-only" for="siteSearch">検索</label>
+            <input id="siteSearch" type="search" placeholder="検索" autocomplete="off" data-search-input>
+            <button type="submit" aria-label="検索">
+              <svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(2.5 2.5)"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></g></svg>
+            </button>
+          </form>
+          <div class="header-search-results" data-header-search-results hidden></div>
+        </div>
       </div>
     </header>
 
@@ -36,7 +51,7 @@
           <h1 class="hero-logo-title">
             <img src="images/hero-logo.png" alt="夜道に安心を">
           </h1>
-          <p class="lead">一人暮らしの帰り道や出張先でも、毎日に寄り添う防犯アイテムを紹介します。</p>
+          <p class="lead">一人暮らしの帰り道や出張先でも、<br>毎日に寄り添う防犯アイテムを紹介します。</p>
           <div class="hero-buttons">
             <a class="button primary" href="about.html">はじめての方へ</a>
             <a class="button secondary" href="products.html">商品をみる</a>
@@ -89,7 +104,7 @@
           <div>
             <p class="section-kicker">Pick up</p>
             <h2>今月のおすすめ</h2>
-            <p class="section-lead">毎日の持ち歩きやすさを基準に選んだ注目アイテムです。各商品リンクはAmazonの商品ページへ移動します。</p>
+            <p class="section-lead no-wrap">毎日の持ち歩きやすさを基準に選んだ注目アイテムです。各商品リンクはAmazonの商品ページへ移動します。</p>
           </div>
           <a href="products.html">商品一覧を見る →</a>
         </div>
@@ -222,6 +237,6 @@
     </footer>
     <script src="products-data.js?v=20260609-2"></script>
     <script src="column-articles.js?v=20260609-4"></script>
-    <script src="script.js?v=20260609-3"></script>
+    <script src="script.js?v=20260609-6"></script>
   </body>
 </html>

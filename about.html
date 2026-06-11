@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>morillionについて | morillion</title>
     <meta name="description" content="morillionが大切にしている、暮らしになじむ防犯と商品紹介の考え方をご案内します。">
-    <link rel="stylesheet" href="styles.css?v=20260609-16">
+    <link rel="stylesheet" href="styles.css?v=20260609-31">
   </head>
   <body>
     <header class="site-header">
@@ -19,8 +19,16 @@
         <a href="about.html">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button type="button" aria-label="検索" data-search-open><svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></svg></button>
-        <span class="affiliate-note">Amazon紹介リンクを含みます</span>
+        <div class="header-search">
+          <form class="header-search-form" data-header-search>
+            <label class="sr-only" for="siteSearch">検索</label>
+            <input id="siteSearch" type="search" placeholder="検索" autocomplete="off" data-search-input>
+            <button type="submit" aria-label="検索">
+              <svg class="search-icon" viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(2.5 2.5)"><circle cx="13.5" cy="13.5" r="8.5"></circle><path d="m20 20 7 7"></path></g></svg>
+            </button>
+          </form>
+          <div class="header-search-results" data-header-search-results hidden></div>
+        </div>
       </div>
     </header>
 
@@ -82,6 +90,6 @@
     </footer>
     <script src="products-data.js?v=20260609-2"></script>
     <script src="column-articles.js?v=20260609-4"></script>
-    <script src="script.js?v=20260609-3"></script>
+    <script src="script.js?v=20260609-6"></script>
   </body>
 </html>
