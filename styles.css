@@ -2477,11 +2477,11 @@ mark {
     position: sticky;
     top: 0;
     z-index: 100;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 10px;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
     min-height: 0;
-    padding: 10px 14px 12px;
+    padding: 10px 14px;
     background: rgba(255, 255, 255, .97);
     border-bottom: 0;
     box-shadow: 0 2px 14px rgba(31, 74, 92, .07);
@@ -2502,22 +2502,16 @@ mark {
   }
 
   .menu-button {
-    display: grid;
-    align-self: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #e5eaec;
+    display: none;
   }
 
   .site-nav {
-    top: 58px;
-    left: 14px;
-    right: 14px;
-    z-index: 110;
+    display: none;
   }
 
   .header-actions {
-    grid-column: 1 / -1;
+    grid-column: 2;
+    grid-row: 1;
     width: 100%;
     justify-self: stretch;
   }
@@ -2527,7 +2521,7 @@ mark {
   }
 
   .header-search-form {
-    height: 42px;
+    height: 38px;
     padding: 0 8px 0 14px;
     background: #f5f7f7;
     border: 0;
@@ -2535,7 +2529,7 @@ mark {
   }
 
   .header-search-form input {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .header-search-results {
