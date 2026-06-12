@@ -2942,7 +2942,8 @@ mark {
     display: grid;
     justify-items: center;
     gap: 2px;
-    min-width: 58px;
+    flex: 1;
+    min-width: 0;
     color: #8b989e;
     font-size: 9px;
     font-weight: 500;
