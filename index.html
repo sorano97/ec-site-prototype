@@ -12,7 +12,7 @@
         }
       } catch {}
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260611-1">
+    <link rel="stylesheet" href="styles.css?v=20260612-1">
   </head>
   <body>
     <div class="intro-loader" id="introLoader" aria-label="読み込み中">
@@ -44,6 +44,14 @@
       </div>
     </header>
 
+    <div class="mobile-shop-bar mobile-only">毎日に寄り添う防犯アイテムをセレクト</div>
+    <nav class="mobile-quick-nav mobile-only" aria-label="スマホ用クイックメニュー">
+      <a href="#products">おすすめ</a>
+      <a href="#ranking">ランキング</a>
+      <a href="products.html">商品一覧</a>
+      <a href="#column">コラム</a>
+    </nav>
+
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
@@ -60,6 +68,7 @@
         <div class="hero-visual image-hero" aria-label="夜道を歩く女性のイメージ">
           <img src="images/hero-visual.png" alt="夜道を歩く女性のイラスト">
         </div>
+        <div class="mobile-hero-dots mobile-only" aria-hidden="true"><i></i><i class="is-active"></i><i></i><i></i></div>
       </section>
 
       <section id="guide" class="trust-band" aria-label="morillionの安心ポイント">
@@ -235,8 +244,25 @@
       </nav>
       <p class="copyright">価格・在庫・配送・返品条件はリンク先のAmazon.co.jpでご確認ください。<br>© 2026 morillion safety　<a href="#">プライバシーポリシー</a>　<a href="#">運営者情報</a>　<a href="#">利用規約</a></p>
     </footer>
+    <nav class="mobile-bottom-nav mobile-only" aria-label="スマホ用メインメニュー">
+      <a class="is-current" href="#top" aria-label="ホーム">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5v10H15v-6H9v6H3z"/></svg><span>ホーム</span>
+      </a>
+      <a href="products.html" aria-label="商品一覧">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16M7 3v4M7 10v4M7 17v4"/></svg><span>商品一覧</span>
+      </a>
+      <a href="#ranking" aria-label="ランキング">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 20-1.3-1.2C5.2 13.8 2 10.9 2 7.3 2 4.4 4.3 2 7.3 2c1.7 0 3.3.8 4.7 2.2C13.4 2.8 15 2 16.7 2 19.7 2 22 4.4 22 7.3c0 3.6-3.2 6.5-8.7 11.5z"/></svg><span>ランキング</span>
+      </a>
+      <a href="columns.html" aria-label="コラム">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg><span>コラム</span>
+      </a>
+      <a href="about.html" aria-label="サイト紹介">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-5 3.3-7 8-7s7.3 2 8 7"/></svg><span>About</span>
+      </a>
+    </nav>
     <script src="products-data.js?v=20260609-2"></script>
     <script src="column-articles.js?v=20260609-4"></script>
-    <script src="script.js?v=20260611-1"></script>
+    <script src="script.js?v=20260612-1"></script>
   </body>
 </html>
