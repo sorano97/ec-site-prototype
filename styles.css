@@ -1112,7 +1112,8 @@ mark {
 }
 
 .listing-hero h1 {
-  max-width: 760px;
+  width: min(100%, 640px);
+  max-width: none;
   margin: 0;
   font-size: clamp(42px, 7vw, 84px);
   font-weight: 300;
@@ -1121,8 +1122,6 @@ mark {
 }
 
 .column-list-hero .listing-logo-title {
-  width: min(100%, 640px);
-  max-width: none;
   margin-inline: 0;
 }
 
