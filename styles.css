@@ -1108,9 +1108,7 @@ mark {
 
 .listing-hero {
   padding: clamp(82px, 11vw, 142px) clamp(24px, 8vw, 128px) clamp(54px, 8vw, 96px);
-  background:
-    radial-gradient(circle at 82% 20%, rgba(246, 198, 92, .2), transparent 18rem),
-    linear-gradient(135deg, #fff 0 48%, var(--sky-100) 48% 100%);
+  background: linear-gradient(135deg, #fff 0 48%, var(--sky-100) 48% 100%);
 }
 
 .listing-hero h1 {
@@ -1125,7 +1123,7 @@ mark {
 .column-list-hero .listing-logo-title {
   width: min(100%, 640px);
   max-width: none;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .listing-logo-title img {
@@ -1136,7 +1134,7 @@ mark {
 
 .column-list-hero > p:not(.section-kicker):not(.affiliate-disclosure) {
   max-width: 680px;
-  margin: 24px auto 0;
+  margin: 24px 0 0;
   color: #586774;
   font-size: clamp(14px, 1.65vw, 17px);
 }
@@ -1406,11 +1404,9 @@ mark {
 
 .column-list-hero {
   display: grid;
-  justify-items: center;
-  background:
-    radial-gradient(circle at 84% 24%, rgba(246, 198, 92, .16), transparent 20rem),
-    linear-gradient(135deg, #fff 0 52%, var(--sky-50) 52% 100%);
-  text-align: center;
+  justify-items: start;
+  background: linear-gradient(135deg, #fff 0 52%, var(--sky-100) 52% 100%);
+  text-align: left;
 }
 
 .column-listing {
